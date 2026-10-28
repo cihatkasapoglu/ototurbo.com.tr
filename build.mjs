@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 const ROOT=path.dirname(fileURLToPath(import.meta.url));
 const OUT=path.join(ROOT,"dist");
@@ -23,6 +24,23 @@ const brands=read("data/vehicle-brands.json");
 const blog=read("data/blog.json");
 const seen=new Set();
 for(const p of products){p.slug=slug(p.slug);if(!p.slug||seen.has(p.slug))throw new Error("Ürün slug hatalı veya yinelenmiş: "+p.title);seen.add(p.slug);if(p.image){const img=path.basename(p.image);for(const src of [path.join(ROOT,img),path.join(ROOT,"assets",img),path.join(ROOT,"images",img)])if(fs.existsSync(src)){fs.copyFileSync(src,path.join(OUT,"assets",img));break;}}}
+const optimizeFiles=[...new Set([...ASSETS,...products.map(p=>p.image?path.basename(p.image):"").filter(Boolean)])];
+let optimizedCount=0;
+for(const f of optimizeFiles){
+ const target=path.join(OUT,"assets",f);
+ if(!fs.existsSync(target))continue;
+ const ext=path.extname(f),base=path.basename(f,ext);
+ const temp=path.join(OUT,"assets",base+".optimized"+ext);
+ const geometry=f==="ototurbo.png"?"650x280>":f==="ototurbo-com-tr.JFIF"?"1800x850>":"600x350>";
+ try{
+  execFileSync("convert",[target,"-auto-orient","-resize",geometry,"-strip","-quality","84",temp],{stdio:"ignore"});
+  if(fs.existsSync(temp)){fs.renameSync(temp,target);optimizedCount++;}
+ }catch(error){
+  if(fs.existsSync(temp))fs.unlinkSync(temp);
+  console.warn("Görsel otomatik optimize edilemedi; kaynak dosya olduğu gibi kopyalandı: "+f);
+ }
+}
+console.log("Yayın için boyutlandırılan/sıkıştırılan görsel sayısı: "+optimizedCount);
 const records=[{path:"/",freq:"weekly",priority:"1.0"}];
 const allBrands=[...new Set([...brands,...products.map(p=>p.vehicleBrand).filter(Boolean)])];
 const brandCards=allBrands.map(b=>'<button class="brand-card" data-brand="'+esc(b)+'" type="button"><strong>'+esc(b)+'</strong><small>'+products.filter(p=>(p.vehicleBrand||"").toLocaleLowerCase("tr-TR")===b.toLocaleLowerCase("tr-TR")).length+' ürün ↗</small></button>').join("");
