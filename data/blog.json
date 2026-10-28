@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "neden-sifir-turbo-tercih-edilmeli",
+    "title": "Neden sıfır turbo tercih edilmeli?",
+    "description": "Sıfır turbo seçeneğinin avantajlarını ve doğru ürün eşleştirmesinin önemini öğrenin.",
+    "date": "2026-10-28",
+    "sections": [
+      {
+        "heading": "Sıfır turbo ne anlama gelir?",
+        "body": "Sıfır turbo, daha önce kullanılmamış turboşarj ünitesidir. Doğru parça numarasını ve motor seçeneğini eşleştirmek, satın alma öncesindeki belirsizlikleri azaltmaya yardımcı olur."
+      },
+      {
+        "heading": "Uyumluluk neden önemlidir?",
+        "body": "Aynı modelin farklı motorlarında farklı turbo seçenekleri olabilir. Motor kodu, üretim yılı ve turbo referansı birlikte kontrol edilmelidir."
+      },
+      {
+        "heading": "Montaj öncesi kontroller",
+        "body": "Yağ besleme ve dönüş hattı, hava filtresi, intercooler ve arızanın temel nedeni uzman tarafından kontrol edilmelidir."
+      },
+      {
+        "heading": "Doğru turboyu bulun",
+        "body": "Araç bilgilerinizi ve turbo numaranızı WhatsApp üzerinden göndererek uyumluluk desteği isteyin."
+      }
+    ]
+  },
+  {
+    "slug": "sifir-turbo-alirken-nelere-dikkat-edilir",
+    "title": "Sıfır turbo alırken nelere dikkat edilir?",
+    "description": "Turbo kodu, motor bilgisi, garanti ve montaj öncesi kontrol için alışveriş rehberi.",
+    "date": "2026-10-28",
+    "sections": [
+      {
+        "heading": "Turbo parça numarasını kontrol edin",
+        "body": "Turbo üzerindeki üretici numarası veya referans kodunu eksiksiz kaydedin. Net fotoğrafla paylaşmak eşleştirmeyi kolaylaştırabilir."
+      },
+      {
+        "heading": "Motor bilgilerini eşleştirin",
+        "body": "Marka ve model dışında üretim yılı, motor hacmi, yakıt tipi ve motor kodu da gerekebilir."
+      },
+      {
+        "heading": "Garanti ve kapsamı sorun",
+        "body": "Ürünün tam turbo ünitesi olup olmadığını, aktüatör ve bağlantı parçalarının kapsamını ve garanti koşullarını sipariş öncesinde netleştirin."
+      },
+      {
+        "heading": "Montaj öncesi arıza nedenini bulun",
+        "body": "Yağlama problemi, yabancı cisim veya motor kaynaklı sorunlar yeni turboya zarar verebilir. İlgili sistemler montajdan önce incelenmelidir."
+      }
+    ]
+  },
+  {
+    "slug": "turbo-arizasi-belirtileri-ve-kontrol-listesi",
+    "title": "Turbo arızasının belirtileri nelerdir?",
+    "description": "Çekiş kaybı, olağan dışı ses ve duman gibi belirtiler hakkında kontrol listesi.",
+    "date": "2026-10-28",
+    "sections": [
+      {
+        "heading": "Çekiş kaybı",
+        "body": "Güç kaybı veya hızlanmada isteksizlik turbo basıncıyla ilişkili olabilir; hortumlar, sensörler ve egzoz sistemi de kontrol edilmelidir."
+      },
+      {
+        "heading": "Ses veya duman değişimi",
+        "body": "Yeni oluşan ses, olağandışı duman ya da yağ tüketimi teknik inceleme gerektirir. Şiddetli belirtilerde aracı kullanmaya devam etmeyin."
+      },
+      {
+        "heading": "Değişim öncesi kontrol",
+        "body": "Arıza kodları, yağ besleme hatları, emme hattı ve intercooler incelenmeli, arızanın temel nedeni bulunmalıdır."
+      }
+    ]
+  },
+  {
+    "slug": "turbo-numarasi-nerede-yazar",
+    "title": "Turbo numarası nerede yazar, nasıl bulunur?",
+    "description": "Turbo gövdesindeki üretici etiketi ve referans kodunu bulmak için pratik rehber.",
+    "date": "2026-10-28",
+    "sections": [
+      {
+        "heading": "Etiketi ve gövde işaretlerini inceleyin",
+        "body": "Turbo üzerinde etiket, lazer işaretleme veya gövdeye basılı referans numarası bulunabilir."
+      },
+      {
+        "heading": "Numarayı eksiksiz kaydedin",
+        "body": "Harf ve rakamları atlamayın; etiketin net fotoğrafını çekmek parça eşleştirmesine yardımcı olur."
+      },
+      {
+        "heading": "Araç bilgileriyle karşılaştırın",
+        "body": "Turbo kodu, araç modeli, üretim yılı ve motor kodu ile birlikte değerlendirilmelidir."
+      }
+    ]
+  }
+]
