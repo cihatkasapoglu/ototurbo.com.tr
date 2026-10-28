@@ -47,6 +47,8 @@ const brandCards=allBrands.map(b=>'<button class="brand-card" data-brand="'+esc(
 const productCards=products.map(p=>{const route="/urun/"+p.slug+"/";const image=p.image?'<img src="/assets/'+esc(path.basename(p.image))+'" alt="'+esc(p.imageAlt||p.title)+'" loading="lazy">':"";return '<article class="product-card"><a class="product-image'+(image?"":" no-img")+'" href="'+route+'">'+image+'<span class="product-badge">Sıfır ürün</span></a><div class="product-info"><span class="product-make">'+esc([p.vehicleBrand,p.vehicleModel].filter(Boolean).join(" "))+'</span><h3><a href="'+route+'">'+esc(p.title)+'</a></h3><p>'+esc(p.shortDescription||"Ürün bilgileri için detay sayfasını inceleyin.")+'</p><a class="product-link" href="'+route+'"><span>Ürün detaylarını incele</span><span>→</span></a></div></article>';}).join("");
 const blogCards=blog.map((p,i)=>'<article class="blog-card"><span class="blog-number">REHBER / '+String(i+1).padStart(2,"0")+'</span><h3><a href="/blog/'+slug(p.slug)+'/">'+esc(p.title)+'</a></h3><p>'+esc(p.description)+'</p><a class="text-link" href="/blog/'+slug(p.slug)+'/">Yazıyı oku →</a></article>').join("");
 let home=fs.readFileSync(path.join(ROOT,"index.html"),"utf8");
+const buildVersion=Date.now().toString();
+home=home.replace('src="/app.js"', 'src="/app.js?v='+buildVersion+'"');
 home=home.replace("<!-- BRAND_CARDS -->",brandCards).replace("<!-- PRODUCT_CARDS -->",productCards).replace("<!-- BLOG_CARDS -->",blogCards);
 home=home.replace('id="catalogCount">Katalog yükleniyor...', 'id="catalogCount">'+products.length+' ürün listeleniyor');
 home=home.replace('id="productGrid" class="product-grid">','id="productGrid" class="product-grid"'+(products.length?"":" hidden")+'>');
