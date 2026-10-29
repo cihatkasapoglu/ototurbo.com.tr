@@ -48,7 +48,7 @@ const productCards=products.map(p=>{const route="/urun/"+p.slug+"/";const image=
 const blogCards=blog.map((p,i)=>'<article class="blog-card"><span class="blog-number">REHBER / '+String(i+1).padStart(2,"0")+'</span><h3><a href="/blog/'+slug(p.slug)+'/">'+esc(p.title)+'</a></h3><p>'+esc(p.description)+'</p><a class="text-link" href="/blog/'+slug(p.slug)+'/">Yazıyı oku →</a></article>').join("");
 let home=fs.readFileSync(path.join(ROOT,"index.html"),"utf8");
 const buildVersion=Date.now().toString();
-home=home.replace('src="/app.js"', 'src="/app.js?v='+buildVersion+'"');
+home=home.replace('src="/app.js"', 'src="/app.js?v='+buildVersion+'"').replace('href="/styles.css"', 'href="/styles.css?v='+buildVersion+'"');
 home=home.replace("<!-- BRAND_CARDS -->",brandCards).replace("<!-- PRODUCT_CARDS -->",productCards).replace("<!-- BLOG_CARDS -->",blogCards);
 home=home.replace('id="catalogCount">Katalog yükleniyor...', 'id="catalogCount">'+products.length+' ürün listeleniyor');
 home=home.replace('id="productGrid" class="product-grid">','id="productGrid" class="product-grid"'+(products.length?"":" hidden")+'>');
